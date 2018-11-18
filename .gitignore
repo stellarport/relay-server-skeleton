@@ -1,0 +1,13 @@
+node_modules
+.DS_STORE
+npm-debug.log*
+yarn-error.log
+/test/*coverage
+/test/coverage*
+/.chrome
+/.idea
+/dist
+/*.log
+/node_cache
+config.js
+*.config.7z

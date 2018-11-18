@@ -1,0 +1,21 @@
+{
+    "plugins": [
+        "transform-decorators-legacy",
+        "syntax-object-rest-spread",
+        "transform-class-properties"
+    ],
+    "retainLines": true,
+    "presets": [
+        [
+            "env",
+            {
+                "targets": {
+                    "node": "8.6.0"
+                },
+                "loose": true,
+                "modules": "commonjs",
+                "useBuiltIns": "usage"
+            }
+        ]
+    ]
+}
