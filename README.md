@@ -8,16 +8,22 @@ This is a relay server skeleton project to connect to the Stellarport A3S platfo
    ```
    npm install
    ```
-2. Run the app:
+
+2. Rename `example-config.js` to `config.js` and fill in with custom info.
+
+3. Run the app:
    ```
    npm start
    ```
-3. Implement the methods in `/controllers`
-4. Build a production bundle:
+
+4. Implement the methods in `/controllers`
+
+5. Build a production bundle:
    ```
    npm start -- build
    ```
-4. Dockerize for production:
+
+6. Dockerize for production:
    ```
    npm start -- dockerize
    ```
