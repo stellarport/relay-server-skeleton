@@ -1,6 +1,6 @@
 # relay-server-skeleton
 
-This is a relay server skeleton project to connect to the Stellarport A3S platform. If you don't know what A3S is, checkout the [a3s.stellarport.io](documentation).
+This is a relay server skeleton project to connect to the Stellarport A3S platform. If you don't know what A3S is, checkout the [a3s documentation](http://a3s.stellarport.io).
 
 ## Getting Started
 
