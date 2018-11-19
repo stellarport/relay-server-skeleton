@@ -15,6 +15,7 @@ This is a relay server skeleton project to connect to the Stellarport A3S platfo
    ```
    npm start
    ```
+   The relay server is not available on localhost:1337
 
 4. Implement the methods in `/controllers`
 
