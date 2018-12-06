@@ -28,7 +28,7 @@ module.exports = function sendOK (data, options) {
 
     const payload = typeof data === 'string' ? {message: data} : data;
 
-    requestSigner.sign(payload, res);
+    requestSigner.sign(req, res, payload);
 
     return res.json(payload);
 };
