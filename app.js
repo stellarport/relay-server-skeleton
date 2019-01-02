@@ -2,15 +2,10 @@ import './config';
 import './di';
 
 import path from 'path';
-import fs from 'fs';
 import {Container, inject} from 'aurelia-dependency-injection';
 import rc from 'rc';
 import sails from 'sails';
 import {A3S} from "a3s";
-
-if (process.env.NODE_ENV === 'production') {
-    fs.unlink('./config.js');
-}
 
 @inject(A3S)
 class App {
@@ -19,10 +14,6 @@ class App {
     }
 
     init() {
-        if (process.env.NODE_ENV === 'development') {
-            this.a3s.useSandbox();
-        }
-
         const config = {
             ...rc('sails'),
             appPath: path.resolve(__dirname)

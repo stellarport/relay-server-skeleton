@@ -73,5 +73,16 @@ module.exports.routes = {
         controller: 'WithdrawController',
         action: 'withdraw',
         skipAssets: true
+    },
+
+    'put /Customer': {
+        controller: 'CustomerController',
+        action: 'put',
+        skipAssets: true
+    },
+    'delete /Customer': {
+        controller: 'CustomerController',
+        action: 'destroy',
+        skipAssets: true
     }
 };

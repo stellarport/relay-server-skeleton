@@ -11,9 +11,9 @@
  *          - pass string to render specified view
  */
 
-import {RequestSigner} from "a3s";
-
-const requestSigner = new RequestSigner(process.env.REQUEST_SIGNING_SECRET);
+import {Container} from 'aurelia-dependency-injection';
+import {A3S} from "a3s";
+const connectionManager = Container.instance.get(A3S).connectionManager;
 
 module.exports = function sendOK (data, options) {
 
@@ -28,7 +28,7 @@ module.exports = function sendOK (data, options) {
 
     const payload = typeof data === 'string' ? {message: data} : data;
 
-    requestSigner.sign(payload, res);
+    connectionManager.signResponsePayload(req, res, payload);
 
     return res.json(payload);
 };

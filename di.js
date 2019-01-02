@@ -6,6 +6,7 @@
 import 'aurelia-polyfills';
 
 import {Container} from 'aurelia-dependency-injection';
+import {A3S} from 'a3s';
 
 export class DI {
     init() {
@@ -26,6 +27,16 @@ export class DI {
         // Add global injectables here
         // Use following format:
         // this.rootContainer.registerHandler(Class, () => instance);
+
+        //Add the A3S to the container
+        const a3s = (new A3S())
+            .useAsRelay()
+            [process.env.NODE_ENV === 'production' ? 'useProd' : 'useSandbox']()
+            .configure({
+                secret: process.env.REQUEST_SIGNING_SECRET
+            });
+
+        this.rootContainer.registerHandler(A3S, () => a3s);
     }
 }
 

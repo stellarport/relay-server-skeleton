@@ -20,17 +20,22 @@
 module.exports.policies = {
 
     /***************************************************************************
-    *                                                                          *
-    * Default policy for all controllers and actions (`true` allows public     *
-    * access)                                                                  *
-    *                                                                          *
-    ***************************************************************************/
+     *                                                                          *
+     * Default policy for all controllers and actions (`true` allows public     *
+     * access)                                                                  *
+     *                                                                          *
+     ***************************************************************************/
 
-    '*': true,
+    '*': 'isSignedByA3S',
 
     /***************************************************************************
-    *                                                                          *
-    * Specific authorization for each controller actions                       *
-    *                                                                          *
-    ***************************************************************************/
+     *                                                                          *
+     * Specific authorization for each controller actions                       *
+     *                                                                          *
+     ***************************************************************************/
+
+    'CustomerController': {
+        'put': 'hasValidJWT',
+        'destroy': 'hasValidJWT'
+    }
 };
