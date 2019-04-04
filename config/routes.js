@@ -45,7 +45,7 @@ module.exports.routes = {
     // Deposit Controller
     'get /Deposit/Destination': {
         controller: 'DepositController',
-        action: 'depositDestination',
+        action: 'reference',
         skipAssets: true
     },
     'get /Deposit/Instructions': {
@@ -58,7 +58,12 @@ module.exports.routes = {
         action: 'deposit',
         skipAssets: true
     },
-    
+
+    'get /Withdraw/Destination': {
+        controller: 'WithdrawController',
+        action: 'reference',
+        skipAssets: true
+    },
     'get /Withdraw/Instructions': {
         controller: 'WithdrawController',
         action: 'instructions',
@@ -75,6 +80,7 @@ module.exports.routes = {
         skipAssets: true
     },
 
+    // Only needed for KYC implementation
     'put /Customer': {
         controller: 'CustomerController',
         action: 'put',
